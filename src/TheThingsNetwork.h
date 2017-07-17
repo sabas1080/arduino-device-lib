@@ -6,7 +6,11 @@
 
 #include <Arduino.h>
 #include <Stream.h>
-#include <avr/pgmspace.h>
+#ifdef ESP8266
+  #include <pgmspace.h>
+#else
+  #include <avr/pgmspace.h>
+#endif
 
 #define TTN_DEFAULT_SF 7
 #define TTN_DEFAULT_FSB 2
